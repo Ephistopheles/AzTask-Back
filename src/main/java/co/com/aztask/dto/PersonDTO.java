@@ -1,4 +1,4 @@
-package co.com.aztask.model.dto;
+package co.com.aztask.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
