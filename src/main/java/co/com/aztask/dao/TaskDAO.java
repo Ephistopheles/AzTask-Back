@@ -4,10 +4,10 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import co.com.aztask.model.Task;
+import co.com.aztask.entity.TaskEntity;
 
-public interface TaskDAO extends JpaRepository<Task, Long> {
+public interface TaskDAO extends JpaRepository<TaskEntity, Long> {
 
-	List<Task> findByPersonId(Long personId);
+	List<TaskEntity> findByPersonId(Long personId);
 
 }

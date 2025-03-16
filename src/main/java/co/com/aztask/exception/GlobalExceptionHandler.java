@@ -1,4 +1,4 @@
-package co.com.aztask.response;
+package co.com.aztask.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 
-import co.com.aztask.exception.TaskException;
+import co.com.aztask.response.ResponseData;
 
 @RestControllerAdvice
-public class ResponseError {
+public class GlobalExceptionHandler {
 
 	@ExceptionHandler(TaskException.class)
 	public ResponseEntity<ResponseData<Void>> handleNotFound(TaskException ex) {

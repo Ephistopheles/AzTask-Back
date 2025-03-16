@@ -3,13 +3,13 @@ package co.com.aztask.service;
 import java.util.List;
 import java.util.Optional;
 
-import co.com.aztask.model.Person;
+import co.com.aztask.entity.PersonEntity;
 
 public interface PersonService {
 
-	Person savePerson(Person person);
+	PersonEntity savePerson(PersonEntity person);
 
-	List<Person> getAllPersons();
+	List<PersonEntity> getAllPersons();
 
-	Optional<Person> getPersonById(Long id);
+	Optional<PersonEntity> getPersonById(Long id);
 }

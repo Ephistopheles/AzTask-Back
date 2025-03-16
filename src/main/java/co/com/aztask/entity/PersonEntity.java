@@ -1,4 +1,4 @@
-package co.com.aztask.model;
+package co.com.aztask.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -12,7 +12,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Person {
+public class PersonEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -39,6 +39,6 @@ public class Person {
 	private LocalDateTime updatedAt;
 
 	@OneToMany(mappedBy = "person", cascade = CascadeType.ALL, orphanRemoval = true)
-	private List<Task> tasks;
+	private List<TaskEntity> tasks;
 }
 

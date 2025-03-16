@@ -1,4 +1,4 @@
-package co.com.aztask.model;
+package co.com.aztask.entity;
 
 import java.time.LocalDateTime;
 
@@ -24,7 +24,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Task {
+public class TaskEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -46,5 +46,5 @@ public class Task {
 
 	@ManyToOne
 	@JoinColumn(name = "person_id", nullable = false)
-	private Person person;
+	private PersonEntity person;
 }

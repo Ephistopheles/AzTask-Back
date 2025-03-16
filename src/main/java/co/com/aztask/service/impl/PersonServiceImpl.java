@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.stereotype.Service;
 
 import co.com.aztask.dao.PersonDAO;
-import co.com.aztask.model.Person;
+import co.com.aztask.entity.PersonEntity;
 import co.com.aztask.service.PersonService;
 import lombok.RequiredArgsConstructor;
 
@@ -17,19 +17,19 @@ public class PersonServiceImpl implements PersonService {
 	private final PersonDAO personDAO;
 
 	@Override
-	public Person savePerson(Person person) {
+	public PersonEntity savePerson(PersonEntity person) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Person> getAllPersons() {
+	public List<PersonEntity> getAllPersons() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Optional<Person> getPersonById(Long id) {
+	public Optional<PersonEntity> getPersonById(Long id) {
 		return personDAO.findById(id);
 	}
 
