@@ -1,6 +1,7 @@
 package co.com.aztask.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import co.com.aztask.model.Person;
 
@@ -10,5 +11,5 @@ public interface PersonService {
 
 	List<Person> getAllPersons();
 
-	Person getPersonById(Long id);
+	Optional<Person> getPersonById(Long id);
 }
