@@ -18,6 +18,8 @@ public class TaskDTO {
 	private String description;
 
 	private String status;
+	
+	private String effort;
 
 	private Long personId;
 }

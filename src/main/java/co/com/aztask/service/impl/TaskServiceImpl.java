@@ -40,19 +40,16 @@ public class TaskServiceImpl implements TaskService {
 	@Override
 	@Transactional
 	public TaskDTO updateTask(TaskDTO taskDTO) {
-		TaskEntity existingTask = taskDAO.findById(taskDTO.getId())
-				.orElseThrow(() -> new TaskException("Tarea con el ID " + taskDTO.getId() + " no encontrada"));
+	    TaskEntity existingTask = taskDAO.findById(taskDTO.getId())
+	            .orElseThrow(() -> new TaskException("Tarea con el ID " + taskDTO.getId() + " no encontrada"));
 
-		TaskEntity updatedTask = TaskEntity.builder()
-								.id(existingTask.getId())
-								.title(taskDTO.getTitle())
-								.description(taskDTO.getDescription())
-								.status(taskDTO.getStatus())
-								.updatedAt(LocalDateTime.now())
-								.person(existingTask.getPerson())
-								.build();
+	    TaskEntity updatedTask = taskMapper.toEntity(taskDTO);
+	    
+	    updatedTask.setId(existingTask.getId());
+	    updatedTask.setPerson(existingTask.getPerson());
+	    updatedTask.setUpdatedAt(LocalDateTime.now());
 
-		return taskMapper.toDTO(taskDAO.save(updatedTask));
+	    return taskMapper.toDTO(taskDAO.save(updatedTask));
 	}
 
 	@Override

@@ -5,8 +5,12 @@ import java.time.LocalDateTime;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
+import co.com.aztask.enums.impl.TaskEffort;
+import co.com.aztask.enums.impl.TaskStatus;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -34,12 +38,16 @@ public class TaskEntity {
 
 	private String description;
 
-	private String status;
+	@Enumerated(EnumType.STRING)
+	private TaskStatus status;
 	
+	@Enumerated(EnumType.STRING)
+	private TaskEffort effort;
+
 	@CreationTimestamp
 	@Column(name = "created_at", updatable = false)
 	private LocalDateTime createdAt;
-	
+
 	@UpdateTimestamp
 	@Column(name = "updated_at")
 	private LocalDateTime updatedAt;
