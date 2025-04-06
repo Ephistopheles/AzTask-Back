@@ -47,7 +47,7 @@ public class TaskController {
 		return ResponseEntity.ok(ResponseData.success("Tarea eliminada correctamente"));
 	}
 
-	@GetMapping(path = "/getTasks/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(path = "/getTasksByPersonId/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<ResponseData<List<TaskDTO>>> getTasks(@PathVariable Long id) {
 		return ResponseEntity.ok(ResponseData.success(taskService.getTasksByPersonId(id)));
 	}

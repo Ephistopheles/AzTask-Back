@@ -1,20 +1,17 @@
-package co.com.aztask.enums.impl;
+package co.com.aztask.enums;
 
-import co.com.aztask.enums.BaseEnum;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public enum TaskEffort implements BaseEnum {
+public enum TaskStatus {
 
-	BJ("Bajo"),
-	MD("Medio"),
-	AT("Alto");
+	INC("Incompleta"),
+	COM("Completa");
 
 	private final String description;
 
-	@Override
 	public String getCode() {
 		return this.name();
 	}

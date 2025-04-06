@@ -5,8 +5,8 @@ import java.time.LocalDateTime;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
-import co.com.aztask.enums.impl.TaskEffort;
-import co.com.aztask.enums.impl.TaskStatus;
+import co.com.aztask.enums.TaskEffort;
+import co.com.aztask.enums.TaskStatus;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -40,9 +40,12 @@ public class TaskEntity {
 
 	@Enumerated(EnumType.STRING)
 	private TaskStatus status;
-	
+
 	@Enumerated(EnumType.STRING)
 	private TaskEffort effort;
+
+	@Column(name = "estimated_completion_date", updatable = false)
+	private LocalDateTime estimatedCompletionDate;
 
 	@CreationTimestamp
 	@Column(name = "created_at", updatable = false)

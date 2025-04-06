@@ -1,5 +1,7 @@
 package co.com.aztask.dto;
 
+import java.time.LocalDateTime;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -18,8 +20,10 @@ public class TaskDTO {
 	private String description;
 
 	private String status;
-	
+
 	private String effort;
+
+	private LocalDateTime estimatedCompletionDate; 
 
 	private Long personId;
 }
